@@ -11,6 +11,7 @@ import data from '../societies.json';
     <meta name="generator" content={Astro.generator} />
     <title>Better LU Society Search</title>
 		<meta name="description" content="A better way to search for societies at Lancaster University" />
+    <script defer data-domain="socs.pages.dev" src="https://ingest.tokia.dev/js/script.js"></script>
   </head>
   <body>
     <SocietyList client:load societies={data} />
