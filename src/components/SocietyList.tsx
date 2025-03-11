@@ -25,7 +25,9 @@ type Society = {
 
 const SocietyList = ({ societies }: { societies: Society[] }) => {
   const [filteredCategories, setFilteredCategories] = useState<string[]>([]);
-  const [search, setSearch] = useState<string>('');
+  const [search, setSearch] = useState<string>(
+    window ? new URLSearchParams(window.location.search).get('q') ?? '' : ''
+  );
 
   const [allCategories] = useState(
     Array.from(new Set(societies.flatMap((society) => society.categories)))
